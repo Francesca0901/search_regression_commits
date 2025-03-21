@@ -122,6 +122,37 @@ def collect_regression_information():
             })
 
 
+def fetch_repo_LOC(repo_name: str):
+    url = f"{GITHUB_API_URL}/repos/{repo_name}/languages"
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
+    while True:
+        resp = requests.get(url, headers=headers)
+        if resp.status_code == 403:
+            print("[WAIT] Rate limit exceeded. Waiting for 60 seconds...")
+            time.sleep(60)
+            continue
+        resp.raise_for_status()
+        data = resp.json()
+        return data.get("C", 0)
+
+
+def add_loc():
+    with open("regression_information.csv", "r", newline="") as infile, \
+         open("regression_information_loc.csv", "w", newline="", encoding="utf-8") as outfile:
+        
+        reader = csv.DictReader(infile)
+        fieldnames = reader.fieldnames + ["LOC"] if reader.fieldnames else []
+        writer = csv.DictWriter(outfile, fieldnames=fieldnames)
+        writer.writeheader()
+
+        for row in reader:
+            repo = row["repo"]
+            loc = fetch_repo_LOC(repo)
+            row["LOC"] = loc
+            writer.writerow(row)
+
+            print(f"LOC for {repo}: {loc}")
 
 if __name__ == "__main__":
-    collect_regression_information()
+    # collect_regression_information()
+    add_loc()
