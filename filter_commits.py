@@ -1,6 +1,8 @@
-# filter out commits which BIC and BFC both contain change of C files, and changed lines(+ and -) are less than 100.
-# input: regression_commits.csv file 
-# oputput: filtered_regression_commits.csv file
+"""
+Filter out commits which BIC and BFC both contain change of C files, and changed lines(+ and -) are less than 100.
+input: regression_commits.csv file 
+oputput: filtered_regression_commits.csv file
+"""
 
 import csv
 import os
@@ -55,21 +57,21 @@ def filter_commits(repo: str, BIC_sha: str, BFC_sha: str):
         print(f"[SKIP] {repo}: BFC {BFC_sha} does not contain any C files.")
         return
     
-    # Check if BIC contains less than 100 lines of changes(+ and -)
-    BIC_changes = sum(file["changes"] for file in BIC_files)
-    if BIC_changes > 100:
-        print(f"[SKIP] {repo}: BIC {BIC_sha} has more than 100 lines of changes.")
-        return
+    # # Check if BIC contains less than 100 lines of changes(+ and -)
+    # BIC_changes = sum(file["changes"] for file in BIC_files)
+    # if BIC_changes > 100:
+    #     print(f"[SKIP] {repo}: BIC {BIC_sha} has more than 100 lines of changes.")
+    #     return
     
-    # Check if BFC contains less than 100 lines of changes(+ and -)
-    BFC_changes = sum(file["changes"] for file in BFC_files)
-    if BFC_changes > 100:
-        print(f"[SKIP] {repo}: BFC {BFC_sha} has more than 100 lines of changes.")
-        return
+    # # Check if BFC contains less than 100 lines of changes(+ and -)
+    # BFC_changes = sum(file["changes"] for file in BFC_files)
+    # if BFC_changes > 100:
+    #     print(f"[SKIP] {repo}: BFC {BFC_sha} has more than 100 lines of changes.")
+    #     return
     
-    output_file = "filtered_regression_commits.csv"
+    output_file = "regression_commits_filtered.csv"
     
-    # Ensure output CSV has a header if empty
+    # Create output CSV and add a header if empty
     if not os.path.exists(output_file) or os.stat(output_file).st_size == 0:
         with open(output_file, "w", newline="", encoding="utf-8") as csvfile:
             writer = csv.writer(csvfile)

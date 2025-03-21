@@ -1,7 +1,13 @@
+"""
+This script aims at collecting C projects on github with more than 1000 stars and filtering them by commit count.
+output: filtered_projects.csv
+"""
+
 import requests
 import csv
 import time
 import pandas as pd
+import os
 
 GITHUB_API_URL = "https://api.github.com"
 # Get GitHub token from environment
@@ -102,7 +108,7 @@ def collect_projects():
                 print(f"Saved {project['name']} with {commit_count} commits.")
 
 def filter_projects():
-    df = pd.read_csv("projects2.csv")
+    df = pd.read_csv("projects.csv")
 
     median_commits = df["commits"].median()
     print(f"Median commits: {median_commits}")
