@@ -130,11 +130,50 @@ def collect_regression_commits(repo: str, max_commits=200):
                             break
         page += 1
 
+
+def collect_regression_count(repo: str, max_commits=500) -> int:
+    """
+    Search for commits that match bug1_keywords. 
+    Extract from the commit message the bug-introducing commit, 
+    fetch that commit message, and see if it has bug0_keywords.
+    """
+    found_count = 0
+    page = 1
+
+    while found_count < max_commits:
+        commits = get_commits(repo, page=page, per_page=100)
+        if not commits:
+            break
+
+        for commit_obj in commits:
+            msg = commit_obj["commit"]["message"].lower()
+            if any(k in msg for k in bug1_keywords):
+                match = re.search(
+                    r"(?:regression by|regressed by|introduced by|caused by)\s*([a-f0-9]+)",
+                    msg, re.IGNORECASE
+                )
+                if match:
+                    bug_commit_hash = match.group(1)
+                    bug_msg = get_commit_message(repo, bug_commit_hash)
+                    if bug_msg:
+                        found_count+=1
+                        print(f"[FOUND] {repo}: Regression commit {commit_obj['sha']} references fix commit {bug_commit_hash}")
+                        with open("regression_commits_all.csv", "a", newline="", encoding="utf-8") as csvfile:
+                            writer = csv.writer(csvfile)
+                            writer.writerow([repo, commit_obj["sha"], bug_commit_hash])
+                        if found_count >= max_commits:
+                            break
+        page += 1
+
+    return found_count
+
 def main(csv_path: str):
     with open(csv_path, "r", newline="", encoding="utf-8") as csvfile:
         reader = csv.reader(csvfile)
         # Skip the CSV header row
         next(reader, None)
+
+        all_regression_count = 0
 
         for row in reader:
             if not row:
@@ -144,8 +183,9 @@ def main(csv_path: str):
             if not repo:
                 continue
             print(f"\n[INFO] Processing {repo} ...")
-            collect_regression_commits(repo)
+            # collect_regression_commits(repo)
+            all_regression_count += collect_regression_count(repo)
 
 if __name__ == "__main__":
-    CSV_PATH = "filtered_projects3.csv" 
+    CSV_PATH = "projects_filtered.csv" 
     main(CSV_PATH)

@@ -23,7 +23,7 @@ I am going to use upperbound to gradually fetch the projects.
 def search_c_projects():
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     params = {
-        "q": "stars:<4365 language:C",
+        "q": "stars:<1381 language:C",
         "sort": "stars",
         "order": "desc",
         "per_page": 50
@@ -63,7 +63,7 @@ def get_commit_count(repo_full_name, attempt=1, max_attempts=5):
     202 -> the repository is too large and GitHub is still processing stats
     403 -> rate limit or permission issue
     """
-    headers = {"Authorization": f"token {TOKEN}"}
+    headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     url = f"{GITHUB_API_URL}/repos/{repo_full_name}/stats/contributors"
 
     response = requests.get(url, headers=headers)
@@ -97,7 +97,7 @@ def get_commit_count(repo_full_name, attempt=1, max_attempts=5):
 def collect_projects():
     projects = search_c_projects()
     
-    with open("projects2.csv", "w", newline="") as csvfile:
+    with open("projects3.csv", "a", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(["name", "stars", "commits"])
 
@@ -108,7 +108,7 @@ def collect_projects():
                 print(f"Saved {project['name']} with {commit_count} commits.")
 
 def filter_projects():
-    df = pd.read_csv("projects.csv")
+    df = pd.read_csv("projects3.csv")
 
     median_commits = df["commits"].median()
     print(f"Median commits: {median_commits}")
@@ -120,6 +120,6 @@ def filter_projects():
 
 if __name__ == "__main__":
     # Fetch projects and commit counts
-    collect_projects()
+    # collect_projects()
     # Filter by commit count
     filter_projects()
