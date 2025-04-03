@@ -96,7 +96,7 @@ def commit_contains_bug0(commit_msg: str) -> bool:
     lower_msg = commit_msg.lower()
     return any(keyword in lower_msg for keyword in bug0_keywords)
 
-def collect_regression_commits(repo: str, max_commits=200):
+def collect_regression_chain(repo: str, max_commits=200):
     """
     Search for commits that match bug1_keywords. 
     Extract from the commit message the bug-introducing commit, 
@@ -120,22 +120,22 @@ def collect_regression_commits(repo: str, max_commits=200):
                 if match:
                     bug_commit_hash = match.group(1)
                     bug_msg = get_commit_message(repo, bug_commit_hash)
+                    # I should save commit message to a file here, but forgot to do so in the first run, so I will do another function just to collect messges
                     if bug_msg and commit_contains_bug0(bug_msg):
                         found_count += 1
-                        print(f"[FOUND] {repo}: Regression commit {commit_obj['sha']} references fix commit {bug_commit_hash}")
-                        with open("regression_commits.csv", "a", newline="", encoding="utf-8") as csvfile:
+                        print(f"[FOUND] {repo}: Regression commit {commit_obj['sha']} references to FIX commit {bug_commit_hash}")
+                        with open("regression_commits3.csv", "a", newline="", encoding="utf-8") as csvfile:
                             writer = csv.writer(csvfile)
                             writer.writerow([repo, commit_obj["sha"], bug_commit_hash])
                         if found_count >= max_commits:
                             break
         page += 1
 
-
-def collect_regression_count(repo: str, max_commits=500) -> int:
+def collect_all_regression(repo: str, max_commits=500) -> int:
     """
     Search for commits that match bug1_keywords. 
-    Extract from the commit message the bug-introducing commit, 
-    fetch that commit message, and see if it has bug0_keywords.
+    Extract from the commit message the bug-introducing commit.
+    This is for calculating the percentage of regression commits that reference a bug fix commit.
     """
     found_count = 0
     page = 1
@@ -157,8 +157,8 @@ def collect_regression_count(repo: str, max_commits=500) -> int:
                     bug_msg = get_commit_message(repo, bug_commit_hash)
                     if bug_msg:
                         found_count+=1
-                        print(f"[FOUND] {repo}: Regression commit {commit_obj['sha']} references fix commit {bug_commit_hash}")
-                        with open("regression_commits_all.csv", "a", newline="", encoding="utf-8") as csvfile:
+                        print(f"[FOUND] {repo}: Regression commit {commit_obj['sha']} references to commit {bug_commit_hash}")
+                        with open("regression_commits_all_3.csv", "a", newline="", encoding="utf-8") as csvfile:
                             writer = csv.writer(csvfile)
                             writer.writerow([repo, commit_obj["sha"], bug_commit_hash])
                         if found_count >= max_commits:
@@ -167,13 +167,38 @@ def collect_regression_count(repo: str, max_commits=500) -> int:
 
     return found_count
 
-def main(csv_path: str):
+def collect_commit_message(csv_path: str):
+    """
+    Fetch commit message for all the regression in regression_commits_all.csv
+    """
     with open(csv_path, "r", newline="", encoding="utf-8") as csvfile:
         reader = csv.reader(csvfile)
         # Skip the CSV header row
         next(reader, None)
 
-        all_regression_count = 0
+        for row in reader:
+            if not row:
+                continue
+            project_name = row[0].strip()
+            repo = parse_repo_full_name(project_name)
+            if not repo:
+                continue
+            print(f"\n[INFO] Collecting {repo} commit message...")
+            bfc_commit_sha = row[1].strip()
+            bic_commit_sha = row[2].strip()
+            commit_msg = get_commit_message(repo, bic_commit_sha)
+            if commit_msg:
+                with open("commit_messages.csv", "a", newline="", encoding="utf-8") as csvfile:
+                    writer = csv.writer(csvfile)
+                    writer.writerow([repo, bic_commit_sha, commit_msg, bfc_commit_sha])
+
+def main(project_path: str):
+    with open(project_path, "r", newline="", encoding="utf-8") as projectsfile:
+        reader = csv.reader(projectsfile)
+        # Skip the CSV header row
+        next(reader, None)
+
+        # all_regression_count = 0
 
         for row in reader:
             if not row:
@@ -183,9 +208,10 @@ def main(csv_path: str):
             if not repo:
                 continue
             print(f"\n[INFO] Processing {repo} ...")
-            # collect_regression_commits(repo)
-            all_regression_count += collect_regression_count(repo)
+            # collect_regression_chain(repo)
+            collect_all_regression(repo)
+            # collect_commit_message("regression_commits_all.csv")
 
 if __name__ == "__main__":
-    CSV_PATH = "projects_filtered.csv" 
-    main(CSV_PATH)
+    PROJECT_PATH = "filtered_projects3.csv" 
+    main(PROJECT_PATH)

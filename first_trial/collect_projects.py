@@ -16,17 +16,17 @@ if not GITHUB_TOKEN:
     raise ValueError("Please set the GITHUB_TOKEN environment variable")
 
 """ 
-Search GitHub for C projects with 500+ stars.
+Search GitHub for C projects with 1000+ stars.
 However, because we can only get 1000 results at a time,
 I am going to use upperbound to gradually fetch the projects.
 """
 def search_c_projects():
     headers = {"Authorization": f"token {GITHUB_TOKEN}"}
     params = {
-        "q": "stars:500..510 language:C",
+        "q": "stars:<1158 language:C",
         "sort": "stars",
         "order": "desc",
-        "per_page": 100
+        "per_page": 50
     }
     
     projects = []
@@ -120,6 +120,6 @@ def filter_projects():
 
 if __name__ == "__main__":
     # Fetch projects and commit counts
-    # collect_projects() 
+    collect_projects()
     # Filter by commit count
     filter_projects()
