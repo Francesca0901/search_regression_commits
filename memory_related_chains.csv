@@ -1,0 +1,41 @@
+repo,BIC_sha,bug_types
+glfw/glfw,2c204ab52ecaa51bfd32b777aef715dae937f009,Null pointer dereference
+fontforge/fontforge,36554a668c7cf3445a5e9eae0cffb675d20395e4,Memory leak
+fontforge/fontforge,82322a4a4898aeb099b2a1f834bd111bf434ea3e,Memory leak
+sparklemotion/nokogiri,2675a7527c,Memory leak
+mozilla/mozjpeg,fc01f4673b71c0b833c59c21e8c4478a9c4bcf21,AddressSanitizer report
+mozilla/mozjpeg,9120a247436e84c0b4eea828cb11e8f665fcde30,Null pointer dereference
+mozilla/mozjpeg,2a9e3bd7430cfda1bc812d139e0609c6aca0b884,Integer overflow/wraparound
+mozilla/mozjpeg,a09ba29a55b9a43d346421210d94370065eeaf53,Integer overflow/wraparound; AddressSanitizer report
+libusb/libusb,05b0b55b,Memory leak
+haproxy/haproxy,2462e5bcc,Memory leak
+tianocore/edk2,684db6da64bc7b5faee4e1174e801c245f563b5c,Overflow
+tianocore/edk2,d7a09cb86a0416c099fa3a9e0fbe2c8f399b28de,Integer overflow/wraparound
+gluster/glusterfs,70e6ee2,Overflow
+gluster/glusterfs,2ca6441,Memory leak
+openvswitch/ovs,cf3b7538666cd1ef,Null pointer dereference
+stephane/libmodbus,83c34102,Overflow
+xemu-project/xemu,fb6d1bbd246c7a57ef53d3847ef225cd1349d602,Overflow
+xemu-project/xemu,80376c3fc2c38fdd45354e4b0eb45031f35587ed,Overflow
+gpac/gpac,94cf5b14,Overflow; AddressSanitizer report
+gpac/gpac,7bb1b4a4,Double free
+gpac/gpac,b8f8b202,Null pointer dereference
+gpac/gpac,ebfa346e,Null pointer dereference
+pgbackrest/pgbackrest,c5b5b58,Double free
+DynamoRIO/dynamorio,99fd6ce,Memory leak
+OpenSC/OpenSC,45ad44e,Null pointer dereference
+saitoha/libsixel,0221665,Null pointer dereference
+asterisk/asterisk,776a14386a55b5425c7e9617eff8af8b45427144,Memory leak
+asterisk/asterisk,0b6410c4f8,Memory leak
+GNOME/glib,26056558be,Null pointer dereference
+miniupnp/miniupnp,cce19781e67364d36a9068a42d5275836ee88c89,Overflow
+angband/angband,d8518ad36119589cd966e18615881fcec0be1300,Use after free
+profanity-im/profanity,b6bb50ceb28250317351fd5115e3f187f0c56fba,Null pointer dereference; Use after free
+projectacrn/acrn-hypervisor,977da8f08,Null pointer dereference
+eclipse-cyclonedds/cyclonedds,d16264fd82,Memory leak
+HerculesWS/Hercules,0eca88efc69becc591428fbb6b9fddd9237afd3d,Double free
+OSGeo/grass,bf53e3a3608f7fddcea15190b86d3c232a2518fd,Memory leak
+bluez/bluez,caa5835cd805e9771cddef35906a31cce0232dde,Memory leak
+samtools/bcftools,12a6617a0b571c1a8b9903a9f75975a232c1257c,Null pointer dereference
+GNOME/libxml2,956534e,Overflow
+dosemu2/dosemu2,20ba2a7d6,AddressSanitizer report

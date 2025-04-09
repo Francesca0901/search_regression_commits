@@ -1,0 +1,10 @@
+repo,BIC_sha,bug_types
+haproxy/haproxy,2462e5bcc,Memory leak
+tianocore/edk2,684db6da64bc7b5faee4e1174e801c245f563b5c,Overflow
+gluster/glusterfs,2ca6441,Memory leak
+libjpeg-turbo/libjpeg-turbo,a09ba29a55b9a43d346421210d94370065eeaf53,Integer overflow/wraparound; AddressSanitizer report
+gpac/gpac,94cf5b14,Overflow; AddressSanitizer report
+gpac/gpac,7bb1b4a4,Double free
+gpac/gpac,b8f8b202,Null pointer dereference
+gpac/gpac,ebfa346e,Null pointer dereference
+asterisk/asterisk,0b6410c4f8,Memory leak
