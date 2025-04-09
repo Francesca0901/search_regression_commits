@@ -10,7 +10,7 @@ def deduplicate_csv(input_file, output_file):
     df = pd.read_csv(input_file, header=None)
 
     # Remove duplicates based on the first column
-    df_deduplicated = df.drop_duplicates(subset=[0])
+    df_deduplicated = df.drop_duplicates(subset=[1,2])
 
     # Write the deduplicated DataFrame
     df_deduplicated.to_csv(output_file, index=False, header=False)
@@ -18,8 +18,8 @@ def deduplicate_csv(input_file, output_file):
 
 if __name__ == "__main__":
     # Specify the input and output file paths
-    input_file = "filtered_projects.csv"
-    output_file = "filtered_projects_de.csv"
+    input_file = "memory_related_chains.csv"
+    output_file = "memory_related_chains_de.csv"
 
     # Call the deduplication function
     deduplicate_csv(input_file, output_file)

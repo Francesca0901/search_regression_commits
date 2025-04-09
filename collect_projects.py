@@ -108,7 +108,7 @@ def collect_projects():
                 print(f"Saved {project['name']} with {commit_count} commits.")
 
 def filter_projects():
-    df = pd.read_csv("projects3.csv")
+    df = pd.read_csv("projects_1.5.csv")
 
     median_commits = df["commits"].median()
     print(f"Median commits: {median_commits}")

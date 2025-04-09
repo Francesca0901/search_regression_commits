@@ -274,6 +274,6 @@ def collect_memory_related_regression(csv_path: str, output_path: str):
 
 if __name__ == "__main__":
     collect_memory_related_regression(
-        csv_path="regression_commits_all_3.csv",
-        output_path="memory_related_bugs_3.csv"
+        csv_path="regression_commits_all_1.5.csv",
+        output_path="memory_related_bugs_1.5.csv"
     )
