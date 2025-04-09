@@ -27,5 +27,3 @@ OpenSC/OpenSC,45ad44e,Null pointer dereference
 saitoha/libsixel,0221665,Null pointer dereference
 asterisk/asterisk,776a14386a55b5425c7e9617eff8af8b45427144,Memory leak
 asterisk/asterisk,0b6410c4f8,Memory leak
-TrungNguyen1909/qemu-t8030,fb6d1bbd246c7a57ef53d3847ef225cd1349d602,Overflow
-TrungNguyen1909/qemu-t8030,80376c3fc2c38fdd45354e4b0eb45031f35587ed,Overflow
