@@ -108,18 +108,18 @@ def collect_projects():
                 print(f"Saved {project['name']} with {commit_count} commits.")
 
 def filter_projects():
-    df = pd.read_csv("projects_1.5.csv")
+    df = pd.read_csv("projects.csv")
 
     median_commits = df["commits"].median()
     print(f"Median commits: {median_commits}")
 
-    # Apply filtering: Keep projects with commit count in [500, 25000]
-    filtered_df = df[(df["commits"] >= 500) & (df["commits"] < 25000)]
+    # Apply filtering: Keep projects with commit count in [200, 50000]
+    filtered_df = df[(df["commits"] >= 200) & (df["commits"] < 50000)]
     filtered_df.to_csv("filtered_projects3.csv", index=False)
     print(f"Filtered dataset saved as 'filtered_projects3.csv'")
 
 if __name__ == "__main__":
     # Fetch projects and commit counts
-    # collect_projects() 
+    collect_projects() 
     # Filter by commit count
     filter_projects()

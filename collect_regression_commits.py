@@ -171,7 +171,7 @@ collect_all_regression forms regression_commits_all.csv
 This function aims at finding the regression chain, here we check the BIC commit message
 """
 def collect_regression_chain(path: str, max_commits=200):
-    output_file = "regression_chains.csv"
+    output_file = "regression_chains3.csv"
     file_exists = os.path.isfile(output_file)
 
     if not file_exists:
@@ -201,20 +201,20 @@ def collect_regression_chain(path: str, max_commits=200):
 
 
 def main(project_path: str):
-    with open(project_path, "r", newline="", encoding="utf-8") as projectsfile:
-        reader = csv.reader(projectsfile)
-        # Skip the CSV header row
-        next(reader, None)
+    # with open(project_path, "r", newline="", encoding="utf-8") as projectsfile:
+    #     reader = csv.reader(projectsfile)
+    #     # Skip the CSV header row
+    #     next(reader, None)
 
-        for row in reader:
-            if not row:
-                continue
-            project_name = row[0].strip()
-            repo = parse_repo_full_name(project_name)
-            if not repo:
-                continue
-            print(f"\n[INFO] Processing {repo} ...")
-            collect_all_regression(repo)
+    #     for row in reader:
+    #         if not row:
+    #             continue
+    #         project_name = row[0].strip()
+    #         repo = parse_repo_full_name(project_name)
+    #         if not repo:
+    #             continue
+    #         print(f"\n[INFO] Processing {repo} ...")
+    #         collect_all_regression(repo)
         
         # based on the collected regression commits, find regression chains
     collect_regression_chain("regression_commits_all_3.csv")

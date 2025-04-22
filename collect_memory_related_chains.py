@@ -27,11 +27,15 @@ HEADERS = {"Authorization": f"token {GITHUB_TOKEN}"}
 ########################################################################
 memory_bug_patterns = {
     "Null pointer dereference": [
-        r"\bnull[- ]pointer[- ]dereference\b",
+        r"\bnull[- ]pointer[- ]dereference",
         r"\bnull(?:\W+\w+){0,5}\W*(?:pointer|dereference|ptr)\b",
         r"\b(?:pointer|dereference|ptr)(?:\W+\w+){0,5}\W*null\b",
         r"\bsegfault\b(?:\W+\w+){0,10}\bnull\b",
         r"\bnil(?:\W+\w+){0,3}\W*pointer\b",
+    ],
+    "Segmentation fault": [
+        r"\bsegmentation[- ]fault\b",
+        r"\bsegfault",
         r"\bSIGSEGV\b",
     ],
     "Overflow": [
@@ -41,18 +45,18 @@ memory_bug_patterns = {
         r"\b(?:invalid|illegal)(?:\W+\w+){0,5}\W+write",
         r"\b(?:buffer|array|memory)(?:\W+\w+){0,5}\W+overrun\b",
         r"\binvalid(?:\W+\w+){0,5}\W+address\b",
-        r"\bexceed(?:s|ing)?(?:\W+\w+){0,5}\W+allocated(?:\W+\w+){0,5}\W+memory\b",
+        r"\bexceed(?:s|ing|ed)?(?:\W+\w+){0,5}\W+allocated(?:\W+\w+){0,5}\W+memory\b",
         r"\boverflow(?:\W+\w+){0,5}\W+in(?:\W+\w+){0,5}\W+write",
         r"\bindex(?:\W+\w+){0,5}\W+-\d+\b",
         # Out-of-bound read patterns
         r"\b(?:invalid|illegal)(?:\W+\w+){0,5}\W+(?:read|access)",
-        r"\baccess(?:\W+\w+){0,5}\W+violation(?:\W+\w+){0,5}\W+reading\b",
         r"\buninitialized(?:\W+\w+){0,5}\W+memory(?:\W+\w+)\b",
         r"\b(?:stack|heap)(?:\W+\w+){0,5}\W+corruption\b",
         r"\binvalid(?:\W+\w+){0,5}\W+free",
         # Other overflow patterns
         # "To make sure the valid buffer be accessed only.""
         r"\b(?:as|en|in)?sure(?:\W+\w+){0,5}\W+(?:valid|legal)(?:\W+\w+){0,5}\W+(?:access|read|write)"
+        r"\b(?:access(?:es|ed)?|read(?:s|ed)?|write(?:s|d)?)(?:\W+\w+){0,5}\W+(invalid|illegal)\b",
     ],
     "Integer overflow/wraparound": [
         r"integer[- ]overflow",
@@ -65,7 +69,7 @@ memory_bug_patterns = {
     "Use after free": [
         r"use[- ]after[- ]free", 
         r"\bUAF\b",
-        r"\b(?:access|use|dereference)(?:\W+\w+){0,5}\W+(?:freed|deleted|released)(?:\W+\w+){0,5}\W+memory\b",
+        r"\b(?:access(?:es|ed|ing)?|us(?:es|ed|ing)?|dereferenc(?:ed|es|ing)?)(?:\W+\w+){0,5}\W+(?:freed|deleted|released)(?:\W+\w+){0,5}\W+memory\b",
         r"\b(?:pointer|ptr)(?:\W+\w+){0,5}\W+to(?:\W+\w+){0,5}\W+freed(?:\W+\w+){0,5}\W+object",
         r"\bdangling(?:\W+\w+){0,5}\W+pointer\b", 
         r"\bdangling(?:\W+\w+){0,5}\W+reference\b"
@@ -94,11 +98,9 @@ memory_bug_patterns = {
     ],
     # In order to catch all memory related vulnerability, also consider sanitizer report as an indicator
     "AddressSanitizer report": [
-        r"\baddresssanitizer\b",
-        r"\basan:\s",
-        r"==\d+==.*addresssanitizer",
-        r"\bubsan\b",
-        r"\btsan\b",
+        r"addresssanitizer",
+        r"asan",
+        r"ubsan",
     ],
     "Generic Memory Errors": [
         r"\binvalid(?:\W+\w+){0,5}\W+(?:memory(?:\W+\w+){0,5})?access\b",
@@ -233,20 +235,20 @@ def collect_memory_related_regression(csv_path: str, output_path: str):
       2) Attempt to fetch linked issue text
       3) Match memory bug types
       4) If matched, write to `output_path`
-         Format: [repo, BIC_sha, bug_types]
+         Format: [repo, BIC_sha, bug_types, BFC_sha]
     """
     with open(csv_path, "r", newline="", encoding="utf-8") as infile, \
          open(output_path, "w", newline="", encoding="utf-8") as outfile:
         
         reader = csv.reader(infile)
         writer = csv.writer(outfile)
-        writer.writerow(["repo", "BIC_sha", "bug_types"])
+        writer.writerow(["repo", "BIC_sha", "bug_types", "linked_BFC_sha"])
 
         next(reader, None)  # regresion_commit_all.csv contains first row, so skip it
         for row in reader:
             if len(row) < 3:
                 continue
-            repo, _, bic_sha = row
+            repo, bfc_sha, bic_sha = row
             print(f"[INFO] Checking {repo} BIC: {bic_sha}")
             
             commit_msg = fetch_commit_message(repo, bic_sha)
@@ -268,12 +270,13 @@ def collect_memory_related_regression(csv_path: str, output_path: str):
                 writer.writerow([
                     repo,
                     bic_sha,
-                    "; ".join(bug_types)
+                    "; ".join(bug_types),
+                    bfc_sha
                 ])
                 print(f"  -> Matched memory bug(s): {bug_types}")
 
 if __name__ == "__main__":
     collect_memory_related_regression(
-        csv_path="regression_commits_all_1.5.csv",
-        output_path="memory_related_bugs_1.5.csv"
+        csv_path="regression_commits_all_3.csv",
+        output_path="memory_related_chains_3.csv"
     )

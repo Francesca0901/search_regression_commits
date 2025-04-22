@@ -18,8 +18,8 @@ def deduplicate_csv(input_file, output_file):
 
 if __name__ == "__main__":
     # Specify the input and output file paths
-    input_file = "memory_related_chains.csv"
-    output_file = "memory_related_chains_de.csv"
+    input_file = "regression_chains.csv"
+    output_file = "regression_chains_de.csv"
 
     # Call the deduplication function
     deduplicate_csv(input_file, output_file)
