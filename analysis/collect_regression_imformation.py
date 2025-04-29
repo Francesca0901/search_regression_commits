@@ -58,8 +58,8 @@ def fetch_commit_details(repo_name: str, commit_sha: str):
 Collect regression lifecycle.
 """
 def collect_regression_information():
-    with open("regression_commits_filtered.csv", "r", newline="") as infile, \
-         open("regression_information.csv", "w", newline="", encoding="utf-8") as outfile:
+    with open("regression_commits_tail.csv", "r", newline="") as infile, \
+         open("regression_information.csv", "a", newline="", encoding="utf-8") as outfile:
         
         reader = csv.DictReader(infile)
         fieldnames = [
@@ -72,7 +72,8 @@ def collect_regression_information():
             "BFC_sha", 
             "BFC_time", 
             "BFC_files_count",
-            "BFC_file_changes"
+            "BFC_file_changes",
+            "LOC"
         ]
         writer = csv.DictWriter(outfile, fieldnames=fieldnames)
         writer.writeheader()
@@ -88,18 +89,22 @@ def collect_regression_information():
             BFC_time_str = 0
             BFC_files_count = 0
             BFC_file_changes = 0
+            LOC = 0
 
             # Fetch BIC details
             BIC_data, BIC_files = fetch_commit_details(repo, BIC_sha)
             BIC_time_str = BIC_data["commit"]["author"]["date"]
             BIC_files_count = len(BIC_files)
             BIC_file_changes = sum(file["changes"] for file in BIC_files)
+            # Fetch LOC
+            LOC = fetch_repo_LOC(repo)
 
             # Fetch BFC details
             BFC_data, BFC_files = fetch_commit_details(repo, BFC_sha)
             BFC_time_str = BFC_data["commit"]["author"]["date"]
             BFC_files_count = len(BFC_files)
             BFC_file_changes = sum(file["changes"] for file in BFC_files)
+            
 
             try:
                 bic_datetime = datetime.fromisoformat(BIC_time_str.replace("Z",""))
@@ -118,7 +123,8 @@ def collect_regression_information():
                 "BFC_sha": BFC_sha,
                 "BFC_time": BFC_time_str,
                 "BFC_files_count": BFC_files_count,
-                "BFC_file_changes": BFC_file_changes
+                "BFC_file_changes": BFC_file_changes,
+                "LOC": LOC
             })
 
 
@@ -135,24 +141,5 @@ def fetch_repo_LOC(repo_name: str):
         data = resp.json()
         return data.get("C", 0)
 
-
-def add_loc():
-    with open("regression_information.csv", "r", newline="") as infile, \
-         open("regression_information_loc.csv", "w", newline="", encoding="utf-8") as outfile:
-        
-        reader = csv.DictReader(infile)
-        fieldnames = reader.fieldnames + ["LOC"] if reader.fieldnames else []
-        writer = csv.DictWriter(outfile, fieldnames=fieldnames)
-        writer.writeheader()
-
-        for row in reader:
-            repo = row["repo"]
-            loc = fetch_repo_LOC(repo)
-            row["LOC"] = loc
-            writer.writerow(row)
-
-            print(f"LOC for {repo}: {loc}")
-
 if __name__ == "__main__":
-    # collect_regression_information()
-    add_loc()
+    collect_regression_information()

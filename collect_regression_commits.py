@@ -21,8 +21,12 @@ bug0_keywords = [
     " stop", "stop "
 ]
 
+# bug1_keywords = [
+#     "introduced by", "regression by", "caused by", "regressed by"
+# ]
+
 bug1_keywords = [
-    "introduced by", "regression by", "caused by", "regressed by"
+    "introduced in"
 ]
 
 # ------------------ UTILITIES ------------------

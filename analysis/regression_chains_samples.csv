@@ -1,0 +1,166 @@
+repo,fix_period,BIC_sha,BIC_time,BIC_files_count,BIC_changes_lines,BFC_sha,BFC_time,BFC_files_count,BFC_changes_lines,POC available,bug0_types
+redis/redis,3219,9d520a7f,2013-07-16T13:05:13Z,1,8,c2d8d4e648faa172a65a88fcffaf4ccc10a1ad78,2022-05-10T11:55:09Z,1,4,functional problem,functional problem
+redis/redis,867,052e03495f,2019-03-14T16:06:59Z,1,18,b458b2999b749950c5ea9468cfa5ab74782848c3,2021-07-29T09:11:29Z,1,12,"logic bug / integer underflow, no POC",arithmetic problem
+redis/redis,54,d827dbf,2016-03-11T20:22:36Z,1,9,971e3c51b63e7a5ced6a953bdfd2d9bd53b25e52,2016-05-05T09:33:43Z,2,39,functional problem,functional problem
+obsproject/obs-studio,1353,dc4e20500,2017-03-27T16:01:13Z,2,12,df4eb8219cfcd8b74a14e3caabd56bf0f648faea,2020-12-10T10:45:31Z,1,2,functional problem,functional problem
+obsproject/obs-studio,0,d7848f3cb74,2015-11-15T17:43:39Z,1,9,14bfa071688cdf36a8efa8543b0e8e2902fabf2f,2015-11-16T16:22:55Z,1,8,"unsigned integer related, no POC",functional problem
+mpv-player/mpv,332,e2284fba1,2024-01-10T23:43:12Z,4,54,4747865fefbc057e0c7998c361fe41ca2e9d9d4f,2024-12-08T23:39:44Z,1,23,configure file problem,configuration problem
+mpv-player/mpv,2868,a714f8e928,2016-03-05T11:45:54Z,1,2,0f2370476b4279040261878c601fb8015a8502d7,2024-01-11T13:54:25Z,1,7,functional problem,functional problem
+mpv-player/mpv,28,1f8013ff3fddd788a517656e09f5ce5d7efd928d,2023-07-15T19:20:27Z,2,42,221a574a503604fbda6f25f171852d99e49de06b,2023-08-13T18:59:45Z,1,2,functional problem,functional problem
+mpv-player/mpv,19,2e7fcc5a2,2023-07-01T07:03:11Z,1,2,2dc8e70093d9f80a01696f059ff02784bcb7b5f0,2023-07-20T17:31:30Z,1,15,high CPU usage,functional problem
+mpv-player/mpv,327,d07b7f0,2019-12-16T01:32:17Z,4,59,873ae0de2af3bb84a11e5e57f6e3a8942b2263c2,2020-11-08T00:36:26Z,4,88,functional problem,functional problem
+facebook/zstd,17,bb68062c590dbd46905907dd2a63a658040a79d4,2016-10-18T23:08:52Z,5,32,dc904ad17bf608db483f6187bdbcd5ed43fea88d,2016-11-04T23:18:59Z,2,4,"Unitialized memory read, but no POC",memory related
+micropython/micropython,450,35fb90bd57e1a3259aaf67cede50628da6888485,2021-09-20T04:04:08Z,1,17,fd1e66edb3ef479016dbcc5aa7158d8fdfec5793,2022-12-14T04:38:48Z,1,13,functional problem,functional problem
+micropython/micropython,151,70affd9ba22e7f62666a9a2fafc2a3c0be9ef95a,2020-04-13T18:56:31Z,14,48,b31cb21a3936b97af4a52b082e1f40c2061aeab7,2020-09-12T03:47:59Z,1,4,implicit floating point to integer conversions,arithmetic problem
+swaywm/sway,2,662466e8db773926bf61b21280194a3540ae26ec,2018-10-22T14:02:08Z,2,14,f7aed5c7e596bc2f03426d6a91214123000d7ed7,2018-10-25T07:32:16Z,1,4,"logical bug, https://github.com/swaywm/sway/issues/2928",functional problem
+swaywm/sway,0,5967ee1fbcba66ea57d971b924a51209a70d3aaa,2018-09-06T10:20:29Z,1,2,5896781df45405d41545e6227f6749ee862e05ce,2018-09-06T11:15:24Z,1,7,"logical bug, https://github.com/swaywm/sway/issues/2588",functional problem
+glfw/glfw,67,2c204ab52ecaa51bfd32b777aef715dae937f009,2022-05-05T20:23:12Z,7,71,fd7e737216dfdcecd4522b7d8c8dd2439d3dac3b,2022-07-12T09:44:37Z,1,2,functional? https://github.com/glfw/glfw/issues/2092,functional problem
+glfw/glfw,11,fe57e3c2921a1901390534e1e51053df70b5644b,2020-01-01T15:56:32Z,3,44,9372ba95faabd1bb45280d201d6ccdae77bf872e,2020-01-12T16:18:21Z,1,7,"functional problem, inconsistent behavior",functional problem
+glfw/glfw,436,72ac5badb0a188b0d912b1e4fa79a5e143253474,2016-08-18T15:47:54Z,8,25,a1154247fad6ebd1e109e4cdbc32b93266646835,2017-10-29T14:52:22Z,1,11,functional problem,functional problem
+glfw/glfw,42,8597002a177beb56db09cd1a9fca0025687dc706,2017-04-05T01:41:12Z,2,98,2023095d8e63e50fb48f28d1d5643591eec19124,2017-05-17T20:10:24Z,1,4,functional problem,functional problem
+glfw/glfw,0,4d146cb39d,2015-02-22T16:31:32Z,2,3,c43f0829936203adf2e6d42d3697e43c47092a07,2015-02-23T04:14:24Z,2,3,functional problem,functional problem
+libsdl-org/SDL,0,919cd56b20c59249bdde3bb005aeeb8f6550f3e3,2023-12-21T03:05:20Z,14,69,a2e05480d63cac530269c846422e7de3b44e830f,2023-12-21T13:11:32Z,1,8,functional problem,functional problem
+jqlang/jq,0,9760245,2015-01-14T00:57:35Z,2,6,cca3e92854db2a8d8059cf31bb1c74657065024f,2015-01-14T21:50:15Z,2,6,functional problem,functional problem
+jqlang/jq,0,8ca07a0,2014-12-24T06:01:43Z,1,2,1cdcff1c01ff4681f8d73ec4ba9689a702c4c17a,2014-12-24T08:24:53Z,1,2,functional problem,functional problem
+jonas/tig,265,2a8ef0ffbc6c52270c9ce60d16dcf2c544428f92,2024-05-15T20:48:52Z,2,27,e4e63b9dc9ba5c48ee26c06ca168e32c7b5c08be,2025-02-05T17:58:21Z,2,10,functional problem,functional problem
+jonas/tig,185,328ecea246928661045cec741503df695b2dd81a,2013-09-04T23:23:29Z,2,86,a3f39c5f3e1e92a59bac05498e8622be1819f922,2014-03-09T04:30:23Z,1,2,functional problem,functional problem
+jonas/tig,1,80e97cdd456dfe71d0dbf32d77a73bb5a2ab158e,2010-09-19T15:09:41Z,2,10,f7efb4dad86bc0317f18817d243c5d7b015cdbd6,2010-09-21T12:38:11Z,2,3,functional problem,functional problem
+OpenVPN/openvpn,0,5f6c01ea6172ed,2015-05-31T20:41:58Z,1,5,8ceb9619a26f8c507bafbc6d59aed3f65a30455d,2015-06-01T17:15:14Z,1,2,functional problem,functional problem
+OpenVPN/openvpn,3,db950be85d37,2015-05-20T02:33:20Z,4,99,970c4bd2e473f625699bd56db44c1970a9e10ed9,2015-05-23T17:35:05Z,1,24,functional problem,functional problem
+rsyslog/rsyslog,57,9ac56b286,2024-09-15T13:24:28Z,1,12,9bc4c49d0705db2656a56fe14a5a2cfe3f6c9ac2,2024-11-12T09:54:00Z,1,1,functional problem,functional problem
+rsyslog/rsyslog,50,2d15cbc8221e385c5aa821e4a851d7498ed81850,2018-09-20T08:39:47Z,3,89,9e520b07a554c30b63e76e87f7cee63050ccc1a4,2018-11-09T14:04:28Z,1,2,functional problem,functional problem
+limine-bootloader/limine,0,25e1194,2021-09-01T21:34:31Z,1,5,411d735e919d59432b017a3f9568cbd7280ae329,2021-09-02T15:34:59Z,1,28,functional problem,functional problem
+chocolate-doom/chocolate-doom,163,b0585fa6,2015-12-25T12:33:59Z,1,2,0cd3b7e5f8634468676b3b6ff1a525837bf3de2d,2016-06-05T15:45:26Z,1,2,functional problem,functional problem
+openzfs/zfs,70,64c688d,2016-10-05T21:47:29Z,1,33,7bb1325f95d0c11a2145ff99ae15057adfbae0ac,2016-12-14T22:18:53Z,1,38,code refactor,code optimize
+openzfs/zfs,378,b39c22b,2015-06-25T19:42:51Z,1,10,e6603b7c1fc7ac01f8891b11df34d943812153e9,2016-07-08T15:33:01Z,5,88,functional problem,functional problem
+openzfs/zfs,10,1715493,2016-01-01T13:15:31Z,3,9,b858767a31bc80cc9a65d1e7af70213916bfa34a,2016-01-11T21:33:28Z,1,2,add feature,functional problem
+openwall/john,0,00655ad63,2017-11-09T06:25:25Z,1,19,790d23b24b78b07c26c299ac7adbc100a108d9ef,2017-11-09T07:14:22Z,1,5,functional problem,functional problem
+openwall/john,3,be39643,2016-09-29T19:17:21Z,1,2,cb9a35eb023a9ed208fc1b87dc9c78132fb17653,2016-10-03T17:26:03Z,1,2,fix warning,memory related
+openwall/john,2,0a026d5,2016-01-12T15:46:01Z,1,83,6d2afb2a9a2734585983c8ecee0796e444da50b0,2016-01-15T00:20:43Z,1,8,functional problem,functional problem
+openwall/john,16,f6af7d7,2015-03-11T16:47:26Z,1,9,c0e334a1f4ac3230a55bf3c471fc4c821994eaa6,2015-03-27T20:13:55Z,1,9,functional problem,functional problem
+openwall/john,0,6c1b599,2014-11-21T22:33:22Z,8,45,f02231c42abec510fd9c0914792b940b3075a056,2014-11-21T22:52:39Z,1,2,functional problem,functional problem
+openwall/john,0,f5366a2,2014-11-21T15:09:03Z,10,69,2603301665a16e029225d79b75b4f56b63a48685,2014-11-21T15:59:08Z,1,2,functional problem,functional problem
+openwall/john,902,11e5191,2012-02-01T22:52:56Z,1,29,15949eb054300264b3d2f5de242fc1ca84b65ae7,2014-07-23T12:12:12Z,1,4,functional problem,functional problem
+libgit2/libgit2,43,20a2b02d9a1bcb4825ec49605146223c565dcacf,2018-04-18T17:23:40Z,1,24,05e891f1f1bad3e2729a2e3800b314d5b63d43eb,2018-06-01T06:44:30Z,1,8,add feature,functional problem
+jemalloc/jemalloc,181,d412624b25eed2b5c52b7d94a71070d3aab03cb4,2015-12-09T17:00:57Z,1,36,c7d52980275b22f64c672ebaede28dc95d4f1820,2016-06-07T21:30:39Z,1,6,functional problem,functional problem
+jemalloc/jemalloc,12,594c759f37c301d0245dc2accf4d4aaf9d202819,2015-09-02T21:52:24Z,4,84,708ed79834fc3b8e5b14dbb0128a0ebfce63a38f,2015-09-15T06:48:11Z,6,68,code optimize,code optimize
+jemalloc/jemalloc,1297,9c43c13a35220c10d97a886616899189daceb359,2011-03-18T17:53:15Z,1,3,f11a6776c78a09059f8418b718c996a065b33fca,2014-10-05T20:05:10Z,1,13,functional problem,functional problem
+i3/i3,0,7154fecbb,2011-03-06T14:45:42Z,4,39,8ce5f2a21bfc2194a0cca1da223778bcb29872af,2011-03-06T21:02:02Z,1,6,functional problem,functional problem
+betaflight/betaflight,8,c06fd78b834582349e1aaed07f582ae0c9fd3462,2014-10-28T15:49:02Z,1,2,db36cfe12e70171c8d986b8587e2183dad0dc156,2014-11-05T19:39:13Z,6,28,functional problem,functional problem
+htop-dev/htop,1,74b28849c4ee7234aa6018667ff6c8c9a6b41273,2023-10-10T12:17:48Z,1,17,4ef3e1f1bb014cec9504e5247d0a0ad999597b9d,2023-10-11T16:46:48Z,1,21,functional problem,functional problem
+fontforge/fontforge,84,36554a668c7cf3445a5e9eae0cffb675d20395e4,2016-04-29T21:13:44Z,9,31,a18865e9a215639ce1e7e229387dac87c87c5002,2016-07-23T19:50:42Z,7,33,"memory leak, cppcheck, no POC",memory related
+ravynsoft/ravynos,72,e582d4a2b09e,2023-02-10T14:26:53Z,1,96,7623cc8f65ab1b28690d4a6580ae87b7926ed008,2023-04-23T17:30:44Z,1,9,code refactor,code optimize
+ravynsoft/ravynos,24,555a861d6826,2022-10-08T00:08:14Z,1,73,8b19898a78d52b351f4d7a6ad1d8b074d037e3b7,2022-11-01T17:44:39Z,1,19,functional problem,functional problem
+ravynsoft/ravynos,147,26c29e743bbdbb82762540f72d4bc449bae2e092,2020-11-02T15:01:37Z,1,15,88024c4a520bf762cf4154d730ad9784ed2acd90,2021-03-30T09:42:50Z,1,15,functional problem,functional problem
+ravynsoft/ravynos,2,e0a0a3ef,2021-01-30T06:11:24Z,2,58,d6f9c5a6d2f87865f9714d2b8dfd1a9f3080c71e,2021-02-01T07:56:22Z,1,18,functional problem,functional problem
+mozilla/mozjpeg,107,300a344d653d4a8779706e42828d945c6a53ff9d,2023-07-30T15:02:29Z,1,3,837e471a90e79b37cb4f7ef9950321f48c7c5f41,2023-11-14T16:17:25Z,2,38,functional problem,functional problem
+mozilla/mozjpeg,297,479501b07c0afd8912a0e0f5b4740cfce9a89a4c,2019-01-21T19:57:55Z,2,23,c0b16e3d2b35b5b5d805832fcfa615300c6e345b,2019-11-15T19:29:11Z,2,10,configuration,configuration problem
+mozilla/mozjpeg,545,a09ba29a55b9a43d346421210d94370065eeaf53,2016-09-07T21:40:10Z,2,24,c743009717878cb22a5434c798dae5d3879d6ca2,2018-03-06T22:10:14Z,2,5,"unsigned int overflow, https://bugzilla.mozilla.org/show_bug.cgi?id=1295044 -> introduced a build error",arithmetic problem
+mozilla/mozjpeg,11,dfefba77520ded5c5fd4864e76352a5f3eb23e74,2016-09-22T19:19:29Z,2,10,a0047bdea4d11dfeefb9ea797865b1a2ea0a665e,2016-10-04T18:25:34Z,1,2,build problem,compile problem
+axboe/fio,14,8c43ba62,2017-08-21T21:15:00Z,1,9,323876fbe897cf5748d94826380d7d907ebbee17,2017-09-05T14:43:28Z,1,25,"memory align problem, kinda functional",memory related
+haproxy/haproxy,164,64c9c8e,2023-12-11T16:31:31Z,2,31,c16eba8183a0f362cd7d72beba3080ecf5449c87,2024-05-24T11:55:41Z,2,17,data race,data race
+haproxy/haproxy,81,2462e5bcc,2024-02-22T14:14:21Z,2,21,9d4a44e7137fba2c7ca2823174ba1168290a1c3b,2024-05-13T14:24:10Z,1,1,"memory leak, no POC, introduce new memory leak",memory related
+haproxy/haproxy,699,c55015e,2018-09-07T17:02:32Z,2,32,efc5a9d55ba46a934f1474802b90c679461ebc92,2020-08-07T12:48:37Z,1,2,functional problem,functional problem
+haproxy/haproxy,24,85888573,2020-02-27T13:48:35Z,1,5,f4f14eacd37e9de47bf9ecfbbd04a68baf6617ee,2020-03-23T09:31:47Z,1,45,functional problem,functional problem
+haproxy/haproxy,8,b90d2cb,2020-02-18T14:27:32Z,1,25,858885737c1d2672d5b1ba80a58c0bb585a0b981,2020-02-27T13:48:35Z,1,5,functional problem,functional problem
+haproxy/haproxy,5,44b3532,2019-10-17T14:28:40Z,1,53,541a534c9f64c505380b936ff15ce91a8179dfa0,2019-10-23T12:11:54Z,1,4,functional problem,functional problem
+haproxy/haproxy,31,0b3e849,2018-10-26T12:47:44Z,1,6,d913800a7d680fdd7e7864463d5fa936b9d58fa8,2018-11-27T11:02:39Z,1,10,functional problem,functional problem
+mruby/mruby,181,375d22b,2022-12-06T06:26:24Z,1,13,b47c8b738ae3e400ec02269fae9857222218e9d5,2023-06-05T22:29:41Z,1,14,functional problem,functional problem
+tianocore/edk2,6,7a0df26,2019-07-10T11:40:05Z,3,64,04dd0cb972cd35f4bf59f5692096a65b840156d5,2019-07-17T03:19:48Z,1,6,functional problem,functional problem
+tianocore/edk2,23,684db6da64bc7b5faee4e1174e801c245f563b5c,2018-10-16T02:06:12Z,1,16,ade71c52a49d659b20c0b433fb11ddb4f4f543c4,2018-11-08T23:58:16Z,1,6,"buffer access related, no poc, CVE available",memory related
+tianocore/edk2,23,2ec7953d49677142c5f7552e9e3d96fb406ba0c4,2018-10-16T02:06:11Z,1,17,1c4cecc9fd314de0dce8125b0d4b45967637a401,2018-11-08T23:58:15Z,1,6,"buffer access related, no poc, CVE available",memory related
+tianocore/edk2,23,041d89bc0f0119df37a5fce1d0f16495ff905089,2018-10-16T02:06:13Z,2,49,5e45a1fdcfbf9b2b389122eb97475148594625f8,2018-11-08T23:58:14Z,2,12,"buffer access related, no poc, CVE available",memory related
+tianocore/edk2,5,bb685071c2602cf786ea84c69bbebf2158194a38,2018-10-24T03:28:32Z,1,87,61a62fc2587ae4d01718124f28e1ea0e60375902,2018-10-29T08:20:44Z,1,2,lock related,data race
+tianocore/edk2,5,0c9f2cb10b7ddec56a3440e77219fd3ab1725e5c,2018-04-02T22:40:24Z,1,25,e037e88cd81d4ac63dd627719c87c305bf0b439e,2018-04-08T01:27:35Z,1,6,functional problem,code optimize
+tianocore/edk2,12,0a28d02d9fb5293757c507e592a4d0404a7ecf74,2016-06-30T01:57:23Z,2,8,c882bdc6712314f255c92d7c951eaf9760a9de38,2016-07-12T01:58:46Z,1,2,code refactor,code optimize
+tianocore/edk2,7,cd64301398876d0b3700f882b3eea12657510a70,2016-06-08T07:35:16Z,5,57,0c687d02c76592832de73850e1dc81115311318a,2016-06-16T06:11:49Z,1,4,configure problem,configuration problem
+gluster/glusterfs,65,2ca6441,2015-05-19T11:54:45Z,1,6,63ad603542044e473118d33bcc02f121c86beaa7,2015-07-23T12:41:23Z,1,15,"memory leak, no poc, introduce new memory leak",memory related
+RfidResearchGroup/proxmark3,0,8543db11b59f34ca120a1e6eea7f5b43adee8dac,2023-07-19T19:46:20Z,1,15,89cbe3c7df34f7a98828c56d2f6d1dea2a1d5d07,2023-07-20T08:54:37Z,1,3,code refactor,code optimize
+varnishcache/varnish-cache,8,eabe58bc6633012dd01ba8f2a131f4e8cd351b2e,2021-05-25T10:39:38Z,6,72,3730f544db89ab487c0e0e775969edf9c12f63b6,2021-06-03T06:39:32Z,5,13,functional problem,functional problem
+varnishcache/varnish-cache,2,c1352b0b0ece8028317c838751d9042a55347cd5,2021-01-08T15:17:52Z,2,35,05356fb7c6c10d3ddd9766f474da679046922422,2021-01-11T12:18:09Z,2,8,code refactor,code optimize
+varnishcache/varnish-cache,158,340abd0456e4,2019-06-03T07:22:10Z,4,19,46a6a3af681644f43e2e813ee68f8bd53b4cd1bb,2019-11-08T18:10:48Z,2,18,functional problem,functional problem
+DPDK/dpdk,188,b10231aed1ed,2020-06-18T08:15:55Z,1,25,a91fb48a8c248293f1035cdd8b36ad712ae9478f,2020-12-23T14:15:49Z,1,2,functional problem,functional problem
+unbit/uwsgi,34,00dce4265784903a3bf440834ab269fceaf5a14b,2018-03-29T16:07:06Z,1,10,a6b1680f119306fb5995d649b9ff17f46f28838a,2018-05-03T09:35:44Z,1,16,functional problem,functional problem
+krakjoe/pthreads,0,edf81d3cc0f34c1fcb3f8f14435a9a122f6e482f,2017-11-02T09:18:23Z,1,8,4e296c542294ddc65bdb9c10ae6e1dd770a986e7,2017-11-02T17:12:46Z,1,2,compile problem,compile problem
+collectd/collectd,120,3b9c7b2,2019-02-18T13:46:55Z,1,10,e8719df2ed7b9480ffcecc0b68993b74a0714b11,2019-06-19T08:32:11Z,6,15,compile problem,compile problem
+containers/crun,6,7179d71afd608f5e85740b2b4b83f9b41fbe1b15,2020-06-13T13:56:10Z,1,55,9085e62fa2d540f1e5b2b08f8b08143a3c5df064,2020-06-19T18:06:40Z,3,24,functional problem,functional problem
+containers/crun,1,fe15d5651a132288f1e894c60f75852beea217e2,2019-11-08T22:11:42Z,1,29,785675f88f9ee37b7faa9bec98c76caffda51afd,2019-11-09T22:45:57Z,1,7,functional problem,functional problem
+containers/crun,22,d1f136875a205e2055215776e3d46f7b55065865,2019-07-27T20:11:07Z,1,51,53e4621a62faf6a0e561bbb878a847e11c1a947a,2019-08-19T12:29:15Z,1,2,"warnings reported by code-inspector.com, no poc",memory related
+checkpoint-restore/criu,634,01f8f8f4,2011-11-16T20:59:08Z,3,36,01f113ecd3c7d6ed510f4076d1eda76fd9d2e6be,2013-08-12T05:17:02Z,3,8,functional problem,functional problem
+hexchat/hexchat,109,03767ee0f98,2016-07-24T22:08:09Z,5,17,e7c88e0f83f40f9d020aa7d2783e95dff55f323f,2016-11-11T05:44:07Z,1,17,functional problem,functional problem
+NetHack/NetHack,5,f218e3f15e2d5525e817fb07e6a8b4773f296073,2019-05-18T09:25:48Z,5,57,ba5efe7f61598b731f7c8d0c28ecc43e2a978061,2019-05-24T08:33:45Z,2,20,functional problem,functional problem
+xemu-project/xemu,2796,4987783400,2016-02-15T18:57:57Z,1,4,930e239d11e28a3e8c01bae6c38f8894cfe66eb3,2023-10-13T10:58:39Z,6,24,lock related,data race
+xemu-project/xemu,802,2f2b18f60bf1,2018-12-03T07:05:17Z,1,12,df72184ec15829053b3bb5a0d5801773b6d9ec25,2021-02-12T13:52:50Z,1,19,functional problem,functional problem
+xemu-project/xemu,365,cd5ff8333a,2019-06-10T13:10:07Z,6,12,32a354dc6c07d766e70b51f42a62d8cd479e3f82,2020-06-09T13:56:35Z,8,60,functional problem,functional problem
+xemu-project/xemu,372,e6df58a5,2019-05-08T21:18:18Z,1,3,0eaf453ebf6788885fbb5d40426b154ef8805407,2020-05-15T06:36:07Z,1,6,functional problem,functional problem
+xemu-project/xemu,164,848a1cc1e,2018-03-11T03:02:13Z,1,56,dbb6da8ba7e02105bdbb33b527e088249c9843c8,2018-08-22T09:46:44Z,1,73,functional problem,functional problem
+xemu-project/xemu,133,d62644b4,2017-11-14T23:23:34Z,1,70,4ae4bf5bb16bd8e5b94433db9fe8265d30c53ba3,2018-03-28T16:36:25Z,1,34,functional problem,functional problem
+xemu-project/xemu,298,4.20E+08,2017-01-27T12:24:58Z,3,75,6dd836f5d32b989e18c6dda655a26f4d73a52f6a,2017-11-21T20:16:43Z,1,4,functional problem,functional problem
+xemu-project/xemu,417,aab9913,2016-05-12T03:48:21Z,2,13,82a93a1d307064f35c363f79b04b0a0149ac53d9,2017-07-03T10:20:53Z,2,26,data race,data race
+xemu-project/xemu,6,9b6a3ea7a699594,2016-10-04T12:28:10Z,1,7,fb0e8e79a9d77ee240dbca036fa8698ce654e5d1,2016-10-10T15:26:03Z,2,36,functional problem,functional problem
+xemu-project/xemu,171,595a4f07,2015-07-15T05:37:43Z,2,87,349a3b1cc9023f67f8fa336cb3c4a8f21a4aaaf3,2016-01-02T08:02:20Z,1,8,functional problem,functional problem
+xemu-project/xemu,13,5d24ee70bcbcf578614193526bcd5ed30a8eb16c,2014-01-02T02:46:59Z,2,28,d32934c84c72f57e78d430c22974677b7bcabe5d,2014-01-15T03:37:09Z,1,8,functional problem,functional problem
+xemu-project/xemu,5,fb6d1bbd246c7a57ef53d3847ef225cd1349d602,2013-02-08T07:49:10Z,1,11,8a8f5840082eb65d140ccfe7b128c92390cce1c3,2013-02-13T08:25:34Z,1,4,restrict protocal supported,functional problem
+xemu-project/xemu,320,b9d03e352cb6b31a66545763f6a1e20c9abf0c2c,2012-03-22T10:02:24Z,1,45,ddcb73b7782cb6104479503faea04cc224f982b5,2013-02-05T19:00:21Z,1,42,functional problem,functional problem
+xemu-project/xemu,224,80376c3fc2c38fdd45354e4b0eb45031f35587ed,2010-12-20T05:33:35Z,3,20,2da8bb92fb128e686dc9e055defbc5652f7c001d,2011-08-02T01:59:13Z,1,14,possibly functional problem,functional problem
+xemu-project/xemu,22,703e0e89,2010-03-19T21:21:13Z,3,27,81bbe906c89b6b7af58a1eeb96ec5a0bfdc3386f,2010-04-11T19:07:35Z,3,41,functional problem,functional problem
+tvheadend/tvheadend,0,86f3617c8972c5362e51cee7d34cc2d69d799126,2022-09-15T00:31:24Z,1,3,4741b3c1901d4c998b1c5ef7c777728b4827e828,2022-09-15T10:49:46Z,1,2,functional problem,functional problem
+gpac/gpac,42,fc3dda25,2024-09-23T08:58:01Z,4,35,c5f08cda6a17dd484721a7e1b20d4c5e10b63d46,2024-11-04T16:45:25Z,6,51,functional problem,functional problem
+gpac/gpac,157,c08973cc,2023-11-10T12:27:46Z,2,16,05ebaaf712cfe11a77b3290143426cbce441e4ee,2024-04-15T17:12:52Z,2,8,functional problem,functional problem
+gpac/gpac,9,ed4c942f,2023-04-19T16:29:11Z,1,4,ff0259744b7c37541949d562ca085a14fb5974ec,2023-04-28T17:20:28Z,4,25,no poc,functional problem
+gpac/gpac,3,f8ce5083,2023-04-21T11:11:06Z,2,18,2a9436ba354964936b6ebc953afa5f6117c4e267,2023-04-25T07:11:43Z,2,4,functional problem,functional problem
+gpac/gpac,0,621f1cab,2022-09-28T15:41:53Z,5,25,b23408b107fdec60425364464352d56bfdf53366,2022-09-29T11:28:15Z,1,2,warning,arithmetic problem
+gpac/gpac,0,94cf5b14,2022-01-21T11:01:15Z,2,11,b22e3409c6741e75373952396c642ed046bff6b6,2022-01-21T15:07:37Z,2,4,"global-buffer-overflow, https://github.com/gpac/gpac/issues/2059",memory related
+gpac/gpac,1,5e1f084,2021-12-13T10:45:29Z,1,5,76caa7f5d069f203c4b8a17ba15185665ae96dde,2021-12-14T14:57:46Z,1,2,"signal SIGKILL, https://github.com/gpac/gpac/issues/1972, not typical memory problem",functional problem
+gpac/gpac,2,7bcb436a,2021-12-06T08:41:01Z,1,4,2f3c519c7bf161cadcf24e40570ca58f5fc668ca,2021-12-08T10:01:37Z,1,3,no poc,functional problem
+gpac/gpac,0,04c6c8f,2021-12-05T11:30:02Z,2,6,7bcb436af55e5ac01f28bd77b6a030f7d9aa145d,2021-12-06T08:41:01Z,1,4,functional problem,functional problem
+gpac/gpac,0,7bc17e49,2021-10-25T12:49:32Z,10,64,58cb738aa8bf640dbb4fde310b8bf7decd2dfa78,2021-10-25T14:18:07Z,1,8,functional problem,functional problem
+gpac/gpac,0,9fd9fe05,2021-10-11T15:42:13Z,3,12,b9158f89f52e527aca97f6b4720c66697bb7a5c6,2021-10-11T21:57:57Z,4,7,no poc,functional problem
+gpac/gpac,4,9e14ae6a,2021-10-07T09:23:30Z,2,7,9fd9fe05b420107eb214c59d2df832b661293e1b,2021-10-11T15:42:13Z,3,12,functional problem,functional problem
+gpac/gpac,0,f97d1561,2021-09-29T15:37:31Z,1,66,905980e05f79e224efd1f3ff992089750ad1ea55,2021-09-30T13:09:10Z,1,2,no poc,functional problem
+gpac/gpac,0,fe96c94c,2021-09-23T14:48:19Z,1,1,40b4583f8c2f1e09a353b7956f9f4e4f0e7c566f,2021-09-24T07:01:32Z,2,6,functional problem,functional problem
+gpac/gpac,5,ff8a086f,2021-09-14T13:39:08Z,1,3,80af694aa0246083f5a90d8402775077a6c49536,2021-09-20T09:41:35Z,1,4,functional problem,functional problem
+gpac/gpac,0,7bb1b4a4,2021-08-30T14:15:32Z,1,6,d003a572d57940460eb0bffbdbb824b59d4ddac9,2021-08-31T08:05:18Z,1,5,"double free, https://github.com/gpac/gpac/issues/1893, introduced memory leak",memory related
+gpac/gpac,0,ca1f79a5,2021-07-13T12:33:16Z,1,43,b4d25ac3bd6e852eb017d941de03ee3dde56cea2,2021-07-13T17:57:30Z,1,2,functional problem,functional problem
+gpac/gpac,0,d699e586,2021-06-07T13:50:32Z,2,40,34b350588bda977b4ddbc77323843b059cfd92b6,2021-06-07T16:29:58Z,1,3,functional problem,functional problem
+gpac/gpac,0,528d8ee3,2021-06-07T12:58:27Z,4,52,99c6dbd9bbca67a25705858a58fba3157514a72b,2021-06-07T16:29:38Z,3,13,functional problem,functional problem
+gpac/gpac,3,1392d904,2021-05-28T15:49:14Z,1,16,cbe62b08c82b07a6da7805b862b278aabf2a202c,2021-06-01T14:43:05Z,1,1,"null pointer dereference, no poc, and caused new bug cross files",memory related
+gpac/gpac,1,281f990b,2021-04-27T08:23:57Z,1,46,817d073a501b9e32afb6237a4594630ce55bc807,2021-04-28T22:30:19Z,3,25,functional problem,functional problem
+gpac/gpac,0,b8f8b202,2021-04-23T12:37:01Z,1,2,78a8795859c9b86f34d24a839bd742f121234511,2021-04-23T15:53:56Z,4,29,"null pointer dereference, no poc",memory related
+gpac/gpac,2,bebd291,2021-03-20T04:03:37Z,2,28,7b20f80fb9ad94d35ea41de86534ded494a9a956,2021-03-22T14:01:36Z,3,8,functional problem,functional problem
+gpac/gpac,0,ebfa346e,2021-03-12T10:56:53Z,3,20,4319318d40064fb5402b4e97316d389ab75acb1f,2021-03-12T12:22:56Z,2,4,"null pointer dereference, no poc",memory related
+gpac/gpac,0,653e0d2d,2021-03-11T17:30:31Z,1,11,73f0d29faa26430b88d62cd21c603ffaa47e45c0,2021-03-12T11:51:42Z,1,21,functional problem,functional problem
+gpac/gpac,8,54f21e3,2021-02-15T09:06:12Z,2,6,da84c99d3c5b6a6b23101c1de8c14bb0d96be903,2021-02-23T15:42:35Z,2,13,functional problem,functional problem
+gpac/gpac,1,15119f20,2020-12-13T13:03:57Z,6,98,c4f8bc6e61348a951d37756e2d831c0b9c1b2c16,2020-12-14T14:53:16Z,6,73,functional problem,functional problem
+gpac/gpac,0,6426ef84,2020-12-07T22:15:09Z,6,28,a89d242108f7abf6d099cf983f0fd422ac461cd6,2020-12-08T07:49:03Z,1,2,"memory related, asan reported, but no poc",memory related
+gpac/gpac,0,4ef8c11c,2020-11-12T11:18:18Z,6,83,210f598c907f39cafb57a07c989140568d0ce0dd,2020-11-12T14:11:15Z,1,11,functional problem,functional problem
+gpac/gpac,0,833cea09,2020-10-29T15:00:31Z,9,79,93c5696a3de98a4e4aa561e2ca23019ca29e328b,2020-10-30T09:55:37Z,3,56,functional problem,functional problem
+gpac/gpac,0,6d229978,2020-10-09T08:55:30Z,6,27,a177f9314f765200a68f5eb51e5edc6561052cb7,2020-10-09T14:16:13Z,2,3,functional problem,functional problem
+gpac/gpac,0,6692db41,2020-10-08T16:33:55Z,4,14,13b3f61a128837f48df875126812bc1166d3dce1,2020-10-09T07:36:25Z,1,12,functional problem,functional problem
+gpac/gpac,0,0e6bd1c1,2020-07-31T08:46:28Z,2,25,b4b94447f37d2d730ebf5efde9180a2daf8be4e0,2020-07-31T16:22:43Z,1,17,functional problem,functional problem
+gpac/gpac,0,211ab52d,2020-06-04T20:05:37Z,5,17,39367c29f21232e61f6883607c1d1c677bc28ccd,2020-06-05T09:08:01Z,9,39,functional problem,functional problem
+gpac/gpac,12,74bb8692,2020-05-15T07:26:55Z,2,8,5fbc6fd1a38e78b9e9800bcdc1e9e21e461c83e9,2020-05-27T12:25:08Z,2,25,functional problem,functional problem
+gpac/gpac,0,cdc5d3a3,2020-04-16T11:11:02Z,2,16,58f9f135630fb4f5557f36c0b2d87e50f3afcf08,2020-04-16T12:38:10Z,1,4,functional problem,functional problem
+gpac/gpac,4,f2f3b429,2020-04-09T09:01:31Z,1,39,9a2ca54fa60bf4bf38df7c5fbd6b62f37cd39d84,2020-04-14T07:50:56Z,1,5,functional problem,functional problem
+gpac/gpac,3,b54a98db,2020-04-06T08:12:31Z,1,74,f2f3b429a6c9021a08bffe25943004081a9e669c,2020-04-09T09:01:31Z,1,39,functional problem,functional problem
+gpac/gpac,3,2d898eda,2020-03-05T19:11:59Z,1,13,314be05281f2f3300d205f19e71beaeea0538705,2020-03-09T11:12:50Z,2,30,functional problem,functional problem
+gpac/gpac,0,976ea834,2020-02-04T10:43:25Z,2,11,98508c22626cda8d55339f9d1aecfd3f4600842d,2020-02-04T11:38:52Z,3,8,functional problem,functional problem
+ElementsProject/lightning,13,6ceb375650af30682027cdc22e6d029b4382f423,2017-11-10T17:57:43Z,2,36,79443d6f94c1db01f69b297b01eca44ebaec4d12,2017-11-23T20:54:19Z,5,63,functional problem,functional problem
+espruino/Espruino,0,5af2cda721ef045d51e585c69c660287bd10debf,2016-10-13T09:14:19Z,2,11,386d845487cf4ac1b515760f8f0f2a31995c689f,2016-10-13T09:21:14Z,1,12,functional problem,functional problem
+vifm/vifm,231,7f32f8a45b,2024-06-10T08:21:01Z,2,36,631b3cb6950e3c56d5a23449bb43b330fa55e912,2025-01-27T17:15:00Z,3,16,functional problem,functional problem
+vifm/vifm,213,5497f13d71548631ce4ace8146d166d71adad6b7,2022-07-18T16:43:06Z,2,9,b55977eadc0a479451b57573a6555ab92379e2ec,2023-02-17T10:03:41Z,2,14,functional problem,functional problem
+vifm/vifm,5,1a5a0571c37cdc81fcfeb7cba763844cd9591320,2019-07-23T20:27:22Z,3,23,31171936614a46e18927da676aea50a232af663e,2019-07-28T20:50:04Z,1,17,functional problem,functional problem
+vifm/vifm,275,6e8fb6c3379ce9015740530d9bdc5c63b13636be,2016-09-07T20:56:08Z,9,37,d07d7a8975a03f40e2d66f5d7483bcfbf40b0258,2017-06-10T18:00:57Z,1,3,functional problem,functional problem
+vifm/vifm,92,984c2c12dbec459,2017-02-17T21:39:16Z,3,23,c5edac5cd0a5126216270c8999e2b8df5cf305b5,2017-05-21T12:11:04Z,2,35,functional problem,functional problem
+vifm/vifm,28,7325b00d,2012-05-05T21:32:44Z,5,73,f6103dd40e7c9a581582da5be431c8abe78e8e53,2012-06-03T10:20:50Z,1,16,functional problem,functional problem
+util-linux/util-linux,42,5c7b67fbbf41c973ca8d49b1e8bdba22dbb917aa,2018-02-12T13:06:02Z,1,34,651c5d428c2ef103ee8c5b1a310d6f29f0304744,2018-03-27T08:40:13Z,4,43,functional problem,functional problem
+OpenSC/OpenSC,74,45ad44e,2018-03-19T14:25:14Z,10,69,6dfeb9959ffd98f0cd044fa98ad3f29d676cd293,2018-06-01T17:05:56Z,1,2,"segfault, no poc",memory related
+saitoha/libsixel,0,02216654e65d5229791f716fcd7fb9c67e1a04f6,2014-09-26T13:37:39Z,3,51,908c8eb3721e34150ddd939a113703b7532eee6c,2014-09-26T13:51:41Z,1,4,code refactor,code optimize
+xiph/opus,3,220a7d4b,2011-10-02T00:30:16Z,2,69,e98f1f50032f09b196879eeec55ad42200eefd1a,2011-10-05T05:59:28Z,2,6,functional problem,functional problem
+xiph/opus,0,e5736ae2,2011-09-05T14:28:27Z,2,13,7d1df73ff296caf762660952a3950091bef90d25,2011-09-05T15:28:28Z,1,3,functional problem,functional problem
+asterisk/asterisk,1,0b6410c4f8,2015-04-28T10:38:30Z,2,8,39d3e1ef6e4ab4a5fd64418a01bd1a3cedef699e,2015-04-29T21:15:43Z,1,5,"memory leak, no poc, result in double-free",memory related
+open-mpi/ompi,23,eed7b45db59b356f6257f3b019e77643f14f84ce,2014-10-07T17:45:22Z,5,73,672d96704cc165b91c7bcf263e97704affcd5f20,2014-10-31T05:16:11Z,1,8,functional problem,functional problem
+FreeRDP/Remmina,0,2609548e,2022-02-10T11:22:34Z,2,4,9ed4c438dfb6522c4865362ce3e65bfa169988e8,2022-02-10T11:24:58Z,1,2,"null pointer dereference, no poc, result in compile error",memory related
+TinyCC/tinycc,50,6245db9,2016-10-16T09:03:57Z,1,6,e0fe69050d2df59da7370875c4f5eb557618e20c,2016-12-05T23:29:25Z,1,4,"unsigned long long -> int cast, no poc, cannot see what's the new bug",arithmetic problem
+d0k3/GodMode9,0,bfc3363,2018-10-01T21:51:05Z,4,35,e477ec0a180aaedb504ee5e6bf9a89a947b898a9,2018-10-02T16:42:04Z,2,17,functional problem,functional problem
+TrungNguyen1909/qemu-t8030,298,42043e4f1241eeb77f87f5816b5cf0b6e9583ed7,2017-01-27T12:24:58Z,3,75,6dd836f5d32b989e18c6dda655a26f4d73a52f6a,2017-11-21T20:16:43Z,1,4,functional problem,functional problem
